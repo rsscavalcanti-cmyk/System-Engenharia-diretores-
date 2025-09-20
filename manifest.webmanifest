@@ -1,0 +1,13 @@
+{
+"name": "Painel de Obras — System",
+"short_name": "Painel System",
+"start_url": "./index.html",
+"scope": "./",
+"display": "standalone",
+"background_color": "#ffffff",
+"theme_color": "#ffffff",
+"icons": [
+{ "src": "assets/system-logo.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any maskable" },
+{ "src": "assets/system-logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+]
+}
