@@ -4,38 +4,35 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Painel de Obras — System</title>
-<meta name="theme-color" content="#ffffff" />
+
+
+<!-- PWA: Manifest + tema + ícones básicos -->
+<link rel="manifest" href="manifest.webmanifest?v=1" crossorigin="anonymous">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+
+
 <meta name="color-scheme" content="light" />
-
-
-<!-- Manifesto PWA -->
-<link rel="manifest" href="./manifest.webmanifest">
-
-
-<!-- Ícones (fallback para navegadores) -->
-<link rel="icon" sizes="192x192" href="assets/system-logo.jpg">
-<link rel="icon" sizes="512x512" href="assets/system-logo.jpg">
-<link rel="apple-touch-icon" href="assets/system-logo.jpg" />
-
-
 <style>
 :root{
---bg: #ffffff; /* fundo branco elegante */
---card: #f1f5f9; /* cards/botões */
---text: #111827; /* texto principal */
---muted:#64748b; /* texto secundário */
---accent:#2563eb; /* destaque */
---ring:#cbd5e1; /* borda sutil */
---radius: 18px;
+--bg:#ffffff; --card:#f1f5f9; --text:#111827; --muted:#64748b; --accent:#2563eb; --ring:#cbd5e1; --radius:18px;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;background:var(--bg);color:var(--text)}
-
-
 .wrap{max-width:520px;margin:0 auto;padding:18px}
-
-
 header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
 #logo{height:54px;max-width:85%;object-fit:contain}
+.title{margin:2px 0 0;text-align:center}
+.title h1{margin:0;font-size:26px;letter-spacing:.2px}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;color:var(--text);background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:20px 24px;position:relative;isolation:isolate;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:transform .1s ease, box-shadow .1s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.btn span{font-weight:800;font-size:18px;letter-spacing:.3px}
+.btn small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.btn.atl{border-left:6px solid #0ea5e9}
+.btn.ory{border-left:6px solid #16a34a}
+.btn.ico{border-left:6px solid #9333ea}
+.btn.wop{border-left:6px solid #f59e0b}
 </html>
