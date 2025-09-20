@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Painel de Obras — System</title>
+<meta name="theme-color" content="#ffffff" />
+<meta name="color-scheme" content="light" />
+
+
+<!-- Manifesto PWA -->
+<link rel="manifest" href="./manifest.webmanifest">
+
+
+<!-- Ícones (fallback para navegadores) -->
+<link rel="icon" sizes="192x192" href="assets/system-logo.jpg">
+<link rel="icon" sizes="512x512" href="assets/system-logo.jpg">
+<link rel="apple-touch-icon" href="assets/system-logo.jpg" />
+
+
+<style>
+:root{
+--bg: #ffffff; /* fundo branco elegante */
+--card: #f1f5f9; /* cards/botões */
+--text: #111827; /* texto principal */
+--muted:#64748b; /* texto secundário */
+--accent:#2563eb; /* destaque */
+--ring:#cbd5e1; /* borda sutil */
+--radius: 18px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+
+.wrap{max-width:520px;margin:0 auto;padding:18px}
+
+
+header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
+#logo{height:54px;max-width:85%;object-fit:contain}
+</html>
