@@ -1,97 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Painel de Obras — System</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Painel de Obras — System</title>
+<meta name="theme-color" content="#ffffff">
 
-  <!-- PWA / ícones (caminhos ABSOLUTOS com o prefixo do repositório) -->
-  <link rel="manifest" href="/System-Engenharia/manifest.webmanifest">
-  <meta name="theme-color" content="#2563eb">
-  <link rel="icon" href="/System-Engenharia/icon-192.png">
-  <link rel="apple-touch-icon" href="/System-Engenharia/icon-192.png">
+<!-- Ícones e PWA -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
 
-  <meta name="color-scheme" content="light" />
-  <style>
-    :root{
-      --bg:#ffffff; --card:#f1f5f9; --text:#111827; --muted:#64748b;
-      --accent:#2563eb; --ring:#cbd5e1; --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:520px;margin:0 auto;padding:18px}
-    header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
-    #logo{height:54px;max-width:85%;object-fit:contain}
-    .title{margin:2px 0 0;text-align:center}
-    .title h1{margin:0;font-size:26px;letter-spacing:.2px}
+<style>
+  :root{
+    --bg: #ffffff;
+    --card: #f1f5f9;
+    --text: #111827;
+    --muted:#64748b;
+    --accent:#2563eb;
+    --ring:#cbd5e1;
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;
+       background:var(--bg);color:var(--text)}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
-    .btn{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      text-decoration:none;color:var(--text);background:var(--card);
-      border:1px solid var(--ring);border-radius:var(--radius);
-      padding:20px 24px;position:relative;isolation:isolate;
-      box-shadow:0 6px 16px rgba(0,0,0,.08);
-      transition:transform .1s ease, box-shadow .1s ease;
-    }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
-    .btn span{font-weight:800;font-size:18px;letter-spacing:.3px}
-    .btn small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+  .wrap{max-width:520px;margin:0 auto;padding:18px}
+  header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
+  #logo{height:54px;max-width:85%;object-fit:contain}
+  .title{text-align:center}
+  .title h1{margin:0;font-size:26px}
+  .grid{display:grid;gap:18px;margin-top:20px}
 
-    /* Diferenciação visual por obra */
-    .btn.atl{border-left:6px solid #0ea5e9}
-    .btn.ory{border-left:6px solid #16a34a}
-    .btn.ico{border-left:6px solid #9333ea}
-    .btn.wop{border-left:6px solid #f59e0b}
+  .btn{display:flex;justify-content:space-between;align-items:center;
+       padding:20px 24px;background:var(--card);
+       border:1px solid var(--ring);border-radius:var(--radius);
+       text-decoration:none;color:var(--text);
+       box-shadow:0 6px 16px rgba(0,0,0,.08);
+       transition:transform .1s ease, box-shadow .1s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+  .btn span{font-weight:800;font-size:18px}
+  .btn small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 
-    .pill{border:1px solid var(--accent);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--accent);background:rgba(37,99,235,.10)}
-    footer{margin:24px 0 6px;text-align:center;color:var(--muted);font-size:12px}
-  </style>
+  .btn.atl{border-left:6px solid #0ea5e9}
+  .btn.ory{border-left:6px solid #16a34a}
+  .btn.ico{border-left:6px solid #9333ea}
+  .btn.wop{border-left:6px solid #f59e0b}
+
+  .pill{border:1px solid var(--accent);border-radius:999px;
+        padding:6px 14px;font-size:12px;color:var(--accent);
+        background:rgba(37,99,235,.1)}
+  footer{margin:24px 0 6px;text-align:center;color:var(--muted);font-size:12px}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <!-- ÚNICO campo para o LOGO visual da página -->
-      <img id="logo" src="/System-Engenharia/assets/system-logo.jpg" alt="Logo System" />
-      <div class="title"><h1>Painel de Obras</h1></div>
-    </header>
+<div class="wrap">
+  <header>
+    <img id="logo" src="assets/system-logo.jpg" alt="Logo System" />
+    <div class="title"><h1>Painel de Obras</h1></div>
+  </header>
 
-    <main class="grid" aria-label="Lista de obras">
-      <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" rel="noopener" target="_blank">
-        <div><span>Atlântico Golf</span><small>Quadro Kanban e suprimentos</small></div>
-        <div class="pill">Abrir</div>
-      </a>
+  <main class="grid">
+    <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" target="_blank">
+      <div><span>Atlântico Golf</span><small>Quadro Kanban e suprimentos</small></div><div class="pill">Abrir</div>
+    </a>
+    <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" target="_blank">
+      <div><span>Orygem</span><small>Quadro Kanban e suprimentos</small></div><div class="pill">Abrir</div>
+    </a>
+    <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" target="_blank">
+      <div><span>Iconyc</span><small>Quadro Kanban e suprimentos</small></div><div class="pill">Abrir</div>
+    </a>
+    <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" target="_blank">
+      <div><span>Woods / OX Park</span><small>Quadro Kanban e suprimentos</small></div><div class="pill">Abrir</div>
+    </a>
+  </main>
 
-      <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" rel="noopener" target="_blank">
-        <div><span>Orygem</span><small>Quadro Kanban e suprimentos</small></div>
-        <div class="pill">Abrir</div>
-      </a>
+  <footer>© System Engenharia — painel de acesso rápido</footer>
+</div>
 
-      <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" rel="noopener" target="_blank">
-        <div><span>Iconyc</span><small>Quadro Kanban e suprimentos</small></div>
-        <div class="pill">Abrir</div>
-      </a>
-
-      <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" rel="noopener" target="_blank">
-        <div><span>Woods / OX Park</span><small>Quadro Kanban e suprimentos</small></div>
-        <div class="pill">Abrir</div>
-      </a>
-    </main>
-
-    <footer>© System Engenharia — painel de acesso rápido</footer>
-  </div>
-
-  <!-- Registro do Service Worker com o prefixo correto -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker
-          .register('/System-Engenharia/sw.js', { scope: '/System-Engenharia/' })
-          .catch(console.error);
-      });
-    }
-  </script>
+<script>
+ if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('sw.js').catch(console.error);
+ }
+</script>
 </body>
 </html>
+
 
